@@ -43,12 +43,12 @@
                                 MERKEN
                                 <b class="caret"></b>  
                             </a>  
-                                <ul class="dropdown-menu">  
+                                <ul class="dropdown-menu"> 
                                     <?php
                                         $query="SELECT * FROM MERK;";
                                         $database->doSQL($query);
                                         while($row = $database->getRecord()){
-                                            echo "<li><a href=#>".$row['naam']."</a></li>";
+                                            echo "<li><a href=merken.php>".$row['naam']."</a></li>";
                                         }
                                     ?>
                                 </ul>  
@@ -60,7 +60,7 @@
                     </ul>    
                 </div>  
             </div>  
-        </div>  
+        </div> 
     </div>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
