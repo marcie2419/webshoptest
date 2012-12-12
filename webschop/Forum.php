@@ -1,5 +1,6 @@
 <?php
     include "database.class.php";
+    include "Arloader.php";
     $database = new Database('nljson1_db');
 ?>
 <!DOCTYPE html>
@@ -15,9 +16,16 @@
             /* Custom container */
            .container-narrow {
                  margin: 0 auto;
-                 max-width: 1000px;
+                 max-width: 1100px;
            }
            .container-narrow > hr {
+                 margin: 30px 0;
+            }
+            .container-in {
+                margin: 0 auto;
+                max-width: 783px;
+            }
+           .container-in > hr {
                  margin: 30px 0;
             }
         </style>
@@ -33,7 +41,7 @@
                 <div class="container">  
                     <ul class="nav">  
                     <li class="active">  
-                        <a class="brand" href="#">$$$$</a>  
+                        <a class="brand" href="index.php">$$$$</a>   
                     </li>  
                     <ul class="nav">  
                         <li class="dropdown">  
@@ -48,15 +56,19 @@
                                         $query="SELECT * FROM MERK;";
                                         $database->doSQL($query);
                                         while($row = $database->getRecord()){
-                                            echo "<li><a href=#>".$row['naam']."</a></li>";
+                                            echo "<li><a href=".$row['naam'].".php>".$row['naam']."</a></li>";
                                         }
                                     ?>
                                 </ul>  
                          </li>  
                     </ul>  
-                    <li><a href="#">SKATE</a></li>  
-                    <li><a href="#">BOARDS</a></li>  
-                    <li><a href="#">TEES</a></li>  
+                            <?php
+                                $d="SELECT * FROM CATEGORY";
+                                $database->doSQL($d);
+                                while($row = $database->getRecord()){
+                                    echo "<li><a href=".$row['naam'].".php>".$row['naam']."</a></li>";
+                                }
+                            ?> 
                     </ul>    
                 </div>  
             </div>  
@@ -66,13 +78,22 @@
                 <?php                       
                     $database->doSQL($query);
                     while($row = $database->getRecord()){
-                        echo "<li><a href=#>".$row['naam']."</a></li>";
+                        echo "<li><a href=".$row['naam'].".php>".$row['naam']."</a></li>";
                     }
                 ?> 
             </ul>
+        </div>
+        </br>
+        <div class="container-in">
+        <?php
+             $q = "SELECT * FROM ARTIKEL WHERE merk_naam='Forum'";
+             $arloader = new Arloader($database);
+             $arloader->Load($q);
+        ?>
         </div>
     </div>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
+

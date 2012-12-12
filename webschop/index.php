@@ -15,7 +15,7 @@
             /* Custom container */
            .container-narrow {
                  margin: 0 auto;
-                 max-width: 1000px;
+                 max-width: 1100px;
            }
            .container-narrow > hr {
                  margin: 30px 0;
@@ -48,19 +48,37 @@
                                         $query="SELECT * FROM MERK;";
                                         $database->doSQL($query);
                                         while($row = $database->getRecord()){
-                                            echo "<li><a href=merken.php>".$row['naam']."</a></li>";
+                                            echo "<li><a href=".$row['naam'].".php>".$row['naam']."</a></li>";
                                         }
                                     ?>
-                                </ul>  
                          </li>  
                     </ul>  
-                    <li><a href="#">SKATE</a></li>  
-                    <li><a href="#">BOARDS</a></li>  
-                    <li><a href="#">TEES</a></li>  
+                            <?php
+                                $d="SELECT * FROM CATEGORY";
+                                $database->doSQL($d);
+                                while($row = $database->getRecord()){
+                                    echo "<li><a href=".$row['naam'].".php>".$row['naam']."</a></li>";
+                                }
+                            ?>
+                        <li><a href="shoppiingcart.php">Winkelwagente</a></li>
                     </ul>    
                 </div>  
             </div>  
-        </div> 
+        </div>
+        </br></br>
+        <div class="container">
+                <div id="myCarousel" class="carousel slide">
+                    <div class="carousel-inner">
+                        <div class="item active"><a href="BOARDS.php"><img src="carousel/gabiviteri_slide2.jpg"></a></div>
+                        <div class="item"><img src="carousel/gor zombies.jpg"></div>
+                        <div class="item"><img src="carousel/shit.jpg"></div>
+                        <div class="item"><a href="BOARDS.php"><img src="carousel/skateboard.jpg"></a></div>
+                        <div class="item"><img src="carousel/snowboard.jpg"></div>
+                    </div>
+                     <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                     <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>>
+                </div>
+        </div>
     </div>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
