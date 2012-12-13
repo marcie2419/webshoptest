@@ -60,7 +60,7 @@
                                     echo "<li><a href=".$row['naam'].".php>".$row['naam']."</a></li>";
                                 }
                             ?>
-                        <li><a href="shoppiingcart.php">Winkelwagente</a></li>
+                        <li><a href="cart.class.php">Winkelwagentje</a></li>
                     </ul>    
                 </div>  
             </div>  

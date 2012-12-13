@@ -10,12 +10,13 @@ class Arloader{
         $this->database->doSQL($q);
             echo "<div class='row'>";
                 while($row = $this->database->getRecord()){
-                    echo "<div class='span5'><img src =".$row['pic']." alt=some text>
-                        <p>".$row['naam']."</p>
-                            <b>".$row['prijs']."</b></br>
-                        <td><a href=\"cart.class.php?action=add&id=".$row['id']."\">In winkelwagen</a></td>
-                        </br></br>
-                        </div>";
+                    echo "<div class='span5'><img src =".$row['pic']." alt='".$row['description']."'>
+                            <p>".$row['naam']."</p>
+                            <p>".$row['description']."</p>
+                            <b> €".$row['prijs']."</b></br>
+                            <td><a href=\"cart.class.php?action=add&id=".$row['id']."\">In winkelwagen</a></td>
+                            </br></br>
+                         </div>";
                     }
             echo "</div>";
          $this->database->close();
