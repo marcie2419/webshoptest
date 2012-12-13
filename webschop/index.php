@@ -65,15 +65,13 @@
                 </div>  
             </div>  
         </div>
-        </br></br>
-        <div class="container">
+        <br/><br/>
+        <div class="container span10">
                 <div id="myCarousel" class="carousel slide">
                     <div class="carousel-inner">
-                        <div class="item active"><a href="BOARDS.php"><img src="carousel/gabiviteri_slide2.jpg"></a></div>
-                        <div class="item"><img src="carousel/gor zombies.jpg"></div>
-                        <div class="item"><img src="carousel/shit.jpg"></div>
-                        <div class="item"><a href="BOARDS.php"><img src="carousel/skateboard.jpg"></a></div>
-                        <div class="item"><img src="carousel/snowboard.jpg"></div>
+                        <div class="active item"><img src="carousel/Burton Snowboarding.jpg" alt=""></div>
+                        <div class="item"><img src="carousel/dogtown.jpg" alt=""></div>
+                        <div class="item"><img src="carousel/nude_skate.jpg" alt=""></div>
                     </div>
                      <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
                      <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>>

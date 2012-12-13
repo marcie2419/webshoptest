@@ -51,7 +51,7 @@ $database = new Database('nljson1_db');
                 <div class="container">  
                     <ul class="nav">  
                     <li class="active">  
-                        <a class="brand" href="#">$$$$</a>  
+                        <a class="brand" href="index.php">$$$$</a>  
                     </li>  
                     <ul class="nav">  
                         <li class="dropdown">  
