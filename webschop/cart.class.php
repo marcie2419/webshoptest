@@ -66,7 +66,7 @@ $database = new Database('nljson1_db');
                                         $query="SELECT * FROM MERK;";
                                         $database->doSQL($query);
                                         while($row = $database->getRecord()){
-                                            echo "<li><a href=".$row['naam'].".php>".$row['naam']."</a></li>";
+                                            echo "<li><a href=merken.php?naam=".$row['naam'].">".$row['naam']."</a></li>";
                                         }
                                     ?>
                          </li>  
@@ -75,7 +75,7 @@ $database = new Database('nljson1_db');
                                 $d="SELECT * FROM CATEGORY";
                                 $database->doSQL($d);
                                 while($row = $database->getRecord()){
-                                    echo "<li><a href=".$row['naam'].".php>".$row['naam']."</a></li>";
+                                    echo "<li><a href=category.php?naam=".$row['naam'].">".$row['naam']."</a></li>";
                                 }
                             ?>
                     </ul>    

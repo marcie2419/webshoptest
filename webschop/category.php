@@ -1,4 +1,5 @@
 <?php
+    $naam = $_GET['naam'];
     include "database.class.php";
     include "Arloader.php";
     $database = new Database('nljson1_db');
@@ -41,7 +42,7 @@
                 <div class="container">  
                     <ul class="nav">  
                     <li class="active">  
-                        <a class="brand" href="index.php">$$$$</a>   
+                        <a class="brand" href="index.php">$$$$</a>  
                     </li>  
                     <ul class="nav">  
                         <li class="dropdown">  
@@ -56,7 +57,7 @@
                                         $query="SELECT * FROM MERK;";
                                         $database->doSQL($query);
                                         while($row = $database->getRecord()){
-                                            echo "<li><a href=".$row['naam'].".php>".$row['naam']."</a></li>";
+                                            echo "<li><a href=merken.php?naam=".$row['naam'].">".$row['naam']."</a></li>";
                                         }
                                     ?>
                                 </ul>  
@@ -66,27 +67,17 @@
                                 $d="SELECT * FROM CATEGORY";
                                 $database->doSQL($d);
                                 while($row = $database->getRecord()){
-                                    echo "<li><a href=".$row['naam'].".php>".$row['naam']."</a></li>";
+                                   echo "<li><a href=category.php?naam=".$row['naam'].">".$row['naam']."</a></li>";
                                 }
                             ?> 
                     </ul>    
                 </div>  
             </div>  
         </div>
-        <div>
-            <ul class="nav nav-pills nav-stacked span2">
-                <?php                       
-                    $database->doSQL($query);
-                    while($row = $database->getRecord()){
-                        echo "<li><a href=".$row['naam'].".php>".$row['naam']."</a></li>";
-                    }
-                ?> 
-            </ul>
-        </div>
         </br>
         <div class="container-in">
         <?php
-             $q = "SELECT * FROM ARTIKEL WHERE merk_naam='Forum'";
+             $q = "SELECT * FROM ARTIKEL WHERE category_naam='".$naam."'";
              $arloader = new Arloader($database);
              $arloader->Load($q);
         ?>
@@ -96,4 +87,3 @@
     <script src="bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
-
